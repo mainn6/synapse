@@ -14,5 +14,12 @@ Synapse reads smart-money intelligence, reasons with a crypto-native LLM, and ac
 - **Identity & track record:** ERC-8004
 - **Always-on:** 24/7 agent loop
 
+## Quickstart
+```bash
+cp .env.example .env      # add your Nansen API key
+pip install -r requirements.txt
+python src/nansen.py       # prints what smart money is buying right now
+```
+
 ## Author
 Built by [@mainn6](https://github.com/mainn6).
