@@ -15,4 +15,4 @@ Synapse reads smart-money intelligence, reasons with a crypto-native LLM, and ac
 - **Always-on:** 24/7 agent loop
 
 ## Author
-Built by [@mainn6](https://github.com/mainn6) — Phase 1 (ClawHack) winner, Mantle Turing Test Hackathon.
+Built by [@mainn6](https://github.com/mainn6).
