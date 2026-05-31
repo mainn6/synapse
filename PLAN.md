@@ -29,8 +29,8 @@ not a dashboard, not a stateless bot.
 ## Build bricks
 - [x] **B0** Repo + README + registration + Nansen credit applied
 - [x] **B1** Perception layer — Nansen smart-money (`src/nansen.py`: token screener + netflow) ✅ working
-- [ ] **B2** Judgment — `src/judge.py`: deterministic verdict (track/watch/ignore) + conviction
-      from netflow direction + trader count + momentum + liquidity (port Alpha Seoul committee logic)
+- [x] **B2** Judgment — `src/judge.py`: deterministic verdict (track/watch/ignore) + 0-100 score
+      from netflow + trader breadth + momentum + liquidity (Alpha Seoul committee logic) ✅ working
 - [ ] **B3** Brain — `src/brain.py`: LLM (AltLLM/Claude) reasons over scored candidates → "why it matters" + final call
 - [ ] **B4** Action + on-chain record — minimal Mantle contract (ERC-8004 identity + `recordDecision()` AI-callable fn);
       agent writes its judgment on-chain. (Scaffold via `create-8004-agent`. Stretch: RealClaw execution.)
