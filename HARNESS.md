@@ -45,10 +45,31 @@ Every tool returns a deterministic observation:
 - Judge = deterministic Python, **no LLM** (cheap, inspectable).
 - Analyst = LLM (Claude / AltLLM when credits land), **only** on the shortlist of judged candidates — not raw 100-token dumps.
 
-## Memory / state (the compounding moat)
-- Local store of every verdict + later outcome (did the call age well?).
-- On-chain record (ERC-8004 + decision log) = the canonical, tamper-proof memory + track record.
-- Each cycle **reads prior memory first** → avoids repeats, builds reputation, "learns."
+## Memory / state — TWO LAYERS (the compounding moat)
+This is the "verifiable AI second brain" — the unique combination.
+1. **Obsidian-style notes = the rich memory.** Each decision is written as a markdown note
+   (token, verdict, score, reasons, risks, LLM reasoning, links to related tokens/wallets).
+   The notes form a *graph* — the agent's growing brain. The agent **reads prior notes first
+   each cycle** → avoids repeats, builds context, "learns." This is `context-is-the-real-moat`
+   + `llm-wiki-as-operating-memory` made literal.
+2. **On-chain = the proof.** Each note is hashed; the hash + verdict + score + timestamp are
+   recorded on Mantle (ERC-8004 identity + decision log). Gas-cheap, tamper-proof, verifiable.
+   Anyone can check the hash against the published note → can't-lie track record.
+
+So: full content lives in Obsidian (memory); the hash lives on-chain (proof). Not either/or.
+
+## Interface & visual layer
+- **Web dashboard (required — 20-Deploy + Best-UI/UX):** renders the agent's growing brain graph
+  + live decisions + on-chain proof links. Publicly accessible (non-localhost).
+- **Visual stack (all already in Jeff's vault):**
+  - **Quartz** (`jackyzha0/quartz` + `quartz-community/graph`) — turns the markdown notes into a
+    published Obsidian-like knowledge-graph site. Most on-concept ("browse the agent's brain"),
+    lowest custom effort, web-publishable. **Primary recommendation.**
+  - **React Flow / XYFlow** — interactive node maps for a live, dynamic dashboard feel.
+  - **Sigma.js / Graphology** — Jeff's existing Alpha Seoul "radial-brain" graph (reuse).
+  - **shadcn/ui + Tremor** — polished dashboard shell, cards, metrics (for the UI/UX award).
+- **Telegram (optional, Jeff's strength):** bot pushes each verdict + on-chain link. Thin add.
+- Scope: ONE good visual. Quartz for the brain-graph is scope-smart (agent writes md → Quartz renders).
 
 ## Recovery contract (per error path)
 - root-cause hint + safe-retry instruction + explicit stop condition.
